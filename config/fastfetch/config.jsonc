@@ -1,0 +1,31 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    
+    "logo": {
+        "type": "small"
+    },
+    
+    "modules": [
+        "title",
+        "separator",
+        
+        {
+            "type": "os",
+            "key": "Distro",
+            "format": "{name}"
+        },
+        
+        "shell",
+        "wm",
+        "terminal",
+        "disk"
+    ],
+    
+    "display": {
+        "separator": "\t",
+        "key": {
+            "width": 12,
+            "type": "both"
+        }
+    }
+}

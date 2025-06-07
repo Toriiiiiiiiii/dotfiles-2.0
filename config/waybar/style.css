@@ -1,0 +1,41 @@
+* {
+	font-family: Maple Mono;
+	font-size: 12px;
+	padding: 0px;
+	background: #39393f;
+}
+
+#clock,
+#tray,
+#workspaces,
+#pulseaudio,
+#custom-name {
+	margin: 6px;
+	margin-right: 0px;
+	padding: 1px 8px;
+	color: #fff7e4;
+	transition-duration: 120ms;
+}
+
+#clock {
+	margin-right: 6px;
+}
+
+#workspaces button {
+	transition-duration: 100ms;
+	all: initial;
+	min-width: 0;
+	font-weight: bold;
+	color: #fff7e4;
+	margin-right: 0.2cm;
+	margin-left: 0.2cm;
+}
+
+#workspaces button:hover {
+	transition-duration: 120ms;
+	color: #b0a9e4;
+}
+
+#workspaces button.focused {
+	color: #accce4;
+}
