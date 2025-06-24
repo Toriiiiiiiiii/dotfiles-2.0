@@ -14,6 +14,8 @@ require('lazy').setup({
     require('plugins/lazydev'),
     require('plugins/nvim-presence'),
 
+    { 'norcalli/nvim-colorizer.lua', lazy = false },
+
     { 'Bilal2453/luvit-meta', lazy = true },
 
     {

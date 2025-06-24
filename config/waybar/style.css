@@ -1,24 +1,41 @@
 * {
-	font-family: Maple Mono;
-	font-size: 12px;
+	font-family: "Departure Mono Nerd Font";
+	font-size: 11px;
 	padding: 0px;
-	background: #39393f;
+}
+
+#waybar {
+	background-color: rgba(17, 21, 30, 0.5);
+    padding: 0px;
 }
 
 #clock,
 #tray,
 #workspaces,
 #pulseaudio,
-#custom-name {
-	margin: 6px;
-	margin-right: 0px;
+#custom-name,
+#custom-caway {
+    margin: 6px 6px 6px 0px;
 	padding: 1px 8px;
-	color: #fff7e4;
+	color: #c3c4c6;
 	transition-duration: 120ms;
+    background: transparent;
+}
+
+#custom-caway {
+    color: #688c76;
 }
 
 #clock {
 	margin-right: 6px;
+    background: rgba(187, 113, 146, 0.75);
+    color: #11151e;
+}
+
+#pulseaudio {
+	margin-right: 6px;
+    background: rgba(187, 113, 146, 0.75);
+    color: #11151e;
 }
 
 #workspaces button {
@@ -26,16 +43,17 @@
 	all: initial;
 	min-width: 0;
 	font-weight: bold;
-	color: #fff7e4;
-	margin-right: 0.2cm;
-	margin-left: 0.2cm;
+	color: #bb7192;
+    padding-left: 0.2cm;
+    padding-right: 0.2cm;
 }
 
 #workspaces button:hover {
 	transition-duration: 120ms;
-	color: #b0a9e4;
+	color: #658c76;
 }
 
 #workspaces button.focused {
-	color: #accce4;
+    background: rgba(187, 113, 146, 0.75);
+	color: #11151e;
 }

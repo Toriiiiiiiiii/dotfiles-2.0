@@ -1,6 +1,6 @@
 :root {
-    --bg: #28282e;
-    --fg: #fff7e4;
+    --bg: #000000;
+    --fg: #aaaaaa;
 
     --purple-dark: #6c5671;
     --purple-light: #b0a9e4;
@@ -11,25 +11,22 @@
 }
 
 * {
-  font-family: Maple Mono;
+  font-family: "Departure Mono Nerd Font";
   background: transparent;
   color: var(--fg);
 }
 
 #window {
-  color: #fff7e4;
-  border-color: #b0a9e4;
-  border-style: solid;
-  border-width: 1px;
+  color: #aaaaaa;
+  border: 1px solid #ffffff;
 
   /*Linear gradient background instead of standard background, because it makes cleaner border-radius cuts, issa bug :p*/
-  background-image: linear-gradient(to bottom, #28282e 100%);
+  background-image: linear-gradient(to bottom, #000000 100%);
 }
 
 #scroll {
-  border-top-style: solid;
   border-width: 1px;
-  border-color: #b0a9e4;
+  border-color: #55ffff;
 }
 
 #inner-box {
@@ -38,7 +35,7 @@
 
 #entry {
   border-style: none;
-  border-color: #b0a9e4;
+  border-color: #55ffff;
   color: #eee6d3;
   padding: 6px;
   margin-bottom: 8px;
@@ -49,33 +46,20 @@
 }
 
 #entry:selected {
-  color: #b0a9e4;
+  color: #ffffff;
   font-weight: bold;
   outline: none;
 }
 
 #input {
-  background-color: #28282e;
-  color: #accce4;
-  border-color: #d8cab8;
-
-  border-style: none;
-
-  font-style: normal;
-
-  border-radius: 8;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-
-  padding: 12px;
-  margin: 8px;
+  background-color: #000000;
+  color: #00aaaa;
+  border: 1px solid white;
+  border-radius: 0px;
 }
 
 #input:focus {
-  background: #27232b;
-  background-color: #27232b;
-  border-color: #ac82e9;
-  font-style: italic;
+  background: #000000;
 }
 
 #img {

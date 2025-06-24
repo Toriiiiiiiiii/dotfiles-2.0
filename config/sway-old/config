@@ -4,8 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-font pango:Departure Mono Nerd Font Medium 11
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -18,10 +16,9 @@ set $right l
 # Your preferred terminal emulator
 set $term kitty
 # Your preferred application launcher
-set $menu pgrep dmenu >/dev/null 2>&1 && killall dmenu || dmenu_run -wm -c -l 15 -nb "#11151e" -nf "#c3c4c6" -sb "#658c76" -sf "#11151e" -fn "Departure Mono Nerd Font" -p "Run"
+set $menu wofi --show drun
 
 exec --no-startup-id picom -b
-exec --no-startup-id swaync
 exec_always autotiling
 
 ### Output configuration
@@ -40,32 +37,18 @@ gaps outer 8px
 default_border pixel 1px
 default_floating_border pixel 1px
 
-#                           border  bg      text    ind     child border
-client.focused              #c3c4c6 #11151e #c3c4c6 #c3c4c6 #c3c4c6
-client.focused_inactive     #5d6272 #11151e #c3c4c6 #5d6272 #5d6272 
-client.unfocused            #5d6272 #11151e #c3c4c6 #5d6272 #5d6272 
-client.urgent               #f3e370 #11151e #c3c4c6 #f3e370 #f3e370
-client.placeholder          #bb7192 #11151e #c3c4c6 #bb7192 #bb7192
+client.focused              #b0a9e4 #28282e #fff7e4 #b0a9e4 #b0a9e4
+client.focused_inactive     #d9c8bf #28282e #fff7e4 #b0a9e4 #d9c8bf 
+client.unfocused            #d9c8bf #28282e #fff7e4 #b0a9e4 #d9c8bf 
+client.urgent               #ffc384 #28282e #fff7e4 #ffc384 #ffc384
+client.placeholder          #b0a9e4 #28282e #fff7e4 #b0a9e4 #b0a9e4
 
 shadows enable
 shadow_blur_radius 10
 default_dim_inactive 0.0
 
-shadows_on_csd enable
-
-blur enable
-blur_passes 3
-blur_radius 5
-
-#
 layer_effects "waybar" shadows enable;
-layer_effects "waybar" blur enable;
-
-#layer_effects "wofi" shadows enable;
-layer_effects "dmenu" blur enable;
-layer_effects "dmenu" shadows enable;
-
-for_window [class="dmenu"] floating enable
+layer_effects "wofi" shadows enable;
 
 ### Idle configuration
 #
@@ -109,10 +92,6 @@ input * {
 
     # Start your launcher
     bindsym $mod+d exec $menu
-    bindsym $mod+n exec bash ~/dev/scripts/notes.sh
-    bindsym $mod+s exec bash ~/dev/scripts/dmenu-sound.sh
-    bindsym $mod+c exec swaync-client -t
-    bindsym $mod+b exec pgrep waybar >/dev/null 2>&1 && killall waybar || waybar
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -125,7 +104,7 @@ input * {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec sh ~/dev/scripts/dmenu-logout.sh
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     bindsym Print exec sway-screenshot -m region --clipboard-only
     bindsym Shift+Print exec sway-screenshot -m output --clipboard-only
@@ -187,9 +166,11 @@ input * {
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
+    bindsym $mod+b splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
+    bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -256,8 +237,8 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-#bar {
-#	swaybar_command waybar
-#}
+bar {
+	swaybar_command waybar
+}
 
 include /etc/sway/config.d/*

@@ -16,14 +16,32 @@
 
 	"modules-right": [
 		"tray",
+        "custom/caway",
         "pulseaudio",
 		"clock"
 	],
 
     "custom/toptext": {
-        "format": "Tori ♥",
-        "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
+        "format": "Tori &lt;3",
+        "on-click": "pgrep dmenu >/dev/null 2>&1 && killall dmenu || sh ~/dev/scripts/dmenu-logout.sh",
         "tooltip": false
+    },
+
+    "custom/caway": {
+        "format": "{icon}{text}",
+        "format-icons": {
+            "Paused": "||",
+            "Stopped": "X"
+        },
+
+        "escape": true,
+        "tooltip": true,
+        "exec": "~/git/caway/caway -b 20",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl previous",
+        "on-scroll-down": "playerctl next",
+        "max-length": 35
     },
 
 	"sway/workspaces": {
@@ -33,7 +51,13 @@
 	},
 
 	"clock": {
-    		"format": "{:%H:%M}",
+    		"format": "time {:%H:%M}",
     		"tooltip": false
   	}, 
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "max-volume": 100,
+        "format": "vol {volume}%"
+    }
 }

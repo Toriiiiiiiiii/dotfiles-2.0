@@ -9,4 +9,6 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
-source ~/dev/scripts/sweet-startup.sh
+python3 ~/dev/scripts/sweet-startup.py
+
+export PATH=$PATH:/home/tori/.spicetify

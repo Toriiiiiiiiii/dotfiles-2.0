@@ -22,9 +22,8 @@
     ],
     
     "display": {
-        "separator": "\t",
+        "separator": ": ",
         "key": {
-            "width": 12,
             "type": "both"
         }
     }
